@@ -64,7 +64,7 @@ const handleRefreshToken = async (req, res) => {
             foundUser.refreshToken = [...newRefreshTokenArray, newRefreshToken]
             const result = await foundUser.save()
 
-            // Creates SEcure Cookie with refresh token
+            // Creates Secure Cookie with refresh token
             res.cookie('jwt', newRefreshToken, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 })
             res.json({ user: decoded.email, accessToken })
         }

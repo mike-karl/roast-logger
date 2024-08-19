@@ -86,7 +86,6 @@ function RoastLog(props) {
 
     useEffect(() => {
       getRoastLog(params.id)
-      
     }, [params.id])
 
     useEffect(() => {
@@ -106,19 +105,18 @@ function RoastLog(props) {
 
     const onSubmit = async (data) => {
       if (isSubmitting) setIsDisabled(true)
-      await new Promise( async (resolve) => {
-        await setTimeout(() => {
-          console.log(data);
-          updateRoastLog(roastLog._id, data);
-          window.location.reload();
-          resolve(undefined);
-        }, 1000)
-      })
+          try {
+            await updateRoastLog(roastLog._id, data);
+            await getRoastLog(roastLog._id);
+            setIsOpen(false);
+          } catch (e) {
+            console.error("Error updating roast log: ", e);
+          }
     }
 
     const updateRoastLog = async (roastId, data) => {
       try {
-      const response = axiosPrivate.patch(`${BASE_URL}/${roastId}`, data, {
+      const response = await axiosPrivate.patch(`${BASE_URL}/${roastId}`, data, {
         withCredentials: true
       })
           console.log(response)
