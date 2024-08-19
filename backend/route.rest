@@ -1,0 +1,108 @@
+Get http://localhost:5000/mantraCoffee?page=2&limit=10
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJlbWFpbCI6Im1rYXJsQGdtYWlsLmNvbSJ9LCJpYXQiOjE2NTY2MjAzNTEsImV4cCI6MTY1NjYyMDQxMX0.8vT23yhpp3AFwn0XxJYAU5z5VI8YJrp6bJkLovQK1xw
+
+###
+
+GET http://localhost:5000/mantraCoffee/62bb84567b21d92eb0a5bf0f
+authorization: Bearer
+
+###
+POST http://localhost:5000/mantraCoffee
+Content-Type: application/json
+authorization: Bearer 
+
+{
+"bean": "Test Bean",
+"description": "test log!",
+"targetRoastLevel": "Dark Roast!",
+"phTemp": 500,
+"phTime": 20,
+"roastProfile": {
+        "tempOverTime": [{
+        "time": "00:30",
+        "temp": 480
+        },
+        {
+        "time":"01:00",
+        "temp": 480
+        }],
+        "roastLevel": "dark",
+        "startWeight": 455,
+        "endWeight": 400,
+        "firstCrack": "8:00",
+        "rollingFirstCrack": "8:30",
+        "secondCrack": "12:00",
+        "totalRoastTime": "12:30",
+        "color": "med-brown",
+        "roastImageUrl": "example.jpg",
+        "roastNotes": "This was a good Example!"
+    }
+}
+
+###
+
+DELETE http://localhost:5000/mantraCoffee/62bb84567b21d92eb0a5bf0f
+authorization: Bearer
+###
+
+PATCH  http://localhost:5000/mantraCoffee/62bb84567b21d92eb0a5bf0f
+Content-Type: application/json
+authorization: Bearer
+
+{
+"bean": "newly updated Bean",
+"description": "test update!",
+"targetRoastLevel": "ligh Roast!",
+"phTemp": 400,
+"phTime": 30,
+"roastProfile": {
+        "tempOverTime": [{
+        "time": "00:30",
+        "temp": 480
+        },
+        {
+        "time":"01:00",
+        "temp": 480
+        }],
+        "roastLevel": "dark",
+        "startWeight": 455,
+        "endWeight": 400,
+        "firstCrack": "8:00",
+        "rollingFirstCrack": "8:30",
+        "secondCrack": "12:00",
+        "totalRoastTime": "12:30",
+        "color": "med-brown",
+        "roastImageUrl": "example.jpg",
+        "roastNotes": "This was a good Example!"
+    }
+}
+
+###
+POST http://localhost:5000/users/register
+Content-Type: application/json
+
+{
+    "first_name": "new",
+	"last_name": "example",
+	"email": "example6@gmail.com",
+	"password": "password"
+}
+
+###
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+    "email": "example6@gmail.com",
+    "password": "password"
+}
+
+###
+
+GET http://localhost:5000/users/welcome
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJiYjcyZDBjMDVmM2NlNmE5NWE3YmNlIiwiZW1haWwiOiJleGFtcGxlNkBnbWFpbC5jb20iLCJpYXQiOjE2NTY0NTE4MTksImV4cCI6MTY1NjQ1OTAxOX0.T4Cl51bhKxRGW-keC5kODlLyVFiPUn9H_Tqq6KprvnM
+
+
+###
+POST http://localhost:5000/users/welcome
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjJiYjcyZDBjMDVmM2NlNmE5NWE3YmNlIiwiZW1haWwiOiJleGFtcGxlNkBnbWFpbC5jb20iLCJpYXQiOjE2NTY0NTE4MTksImV4cCI6MTY1NjQ1OTAxOX0.T4Cl51bhKxRGW-keC5kODlLyVFiPUn9H_Tqq6KprvnM
