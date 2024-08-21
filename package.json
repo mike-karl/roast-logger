@@ -1,0 +1,22 @@
+{
+  "name": "roast-logger",
+  "version": "1.0.0",
+  "description": "Fullstack MERN app project",
+  "main": "index.js",
+  "scripts": {
+    "codesandbox:init": "npm run install && npm run start",
+    "install": "npm run install:frontend && npm run install:backend",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd frontend && npm run start",
+    "start:backend": "cd backend && npm run start",
+    "start:mongodb": "cd .devcontainer && docker-compose up",
+    "test": "cd frontend && npm run test"
+  },
+  "author": "Michael Karl",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

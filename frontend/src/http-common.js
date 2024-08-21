@@ -1,6 +1,9 @@
 import axios from "axios"
 
-const BASE_URL = "http://localhost:5000"
+const port = "3000";
+export const BASE_URL = process.env.REACT_APP_CODESANDBOX === 'true'
+    ? `https://vc6ymm-${port}.csb.app/`
+    : `http://localhost:${port}/`;
 
 export default axios.create({
     baseURL: BASE_URL,
