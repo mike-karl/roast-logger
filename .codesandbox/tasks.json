@@ -12,7 +12,11 @@
         "run-dev": {
           "name": "Run Dev",
           "command": "npm run start",
-          "runAtStart": true
+          "runAtStart": true,
+          "preview": 
+            {
+              "port": 5000
+            }
         },
          "run-server": {
           "name": "Run Server",
