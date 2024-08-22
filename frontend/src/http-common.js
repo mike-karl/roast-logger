@@ -5,18 +5,12 @@ const REGEX = /(?<id>\w{5,6})-(?<port>\d{1,5})\.(?<hostname>.*)/;
 function getPreviewUrl(port) {
   const currentUrl = window.location.host;
 
-  console.log(window.location.host);
-
   const currentMatch = currentUrl.match(REGEX);
 
   if (!currentMatch?.groups) {
     return undefined;
   }
   const { id, hostname } = currentMatch.groups;
-
-  console.log(id);
-  console.log(hostname);
-  console.log(port);
 
   if (!id || !port || !hostname) {
     return undefined;

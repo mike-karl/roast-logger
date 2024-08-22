@@ -1,7 +1,7 @@
 :root {
-  --main-bg-color: #F3F5F7;
-  --primary-color: #494D5A;
-  --secondary-color: #AED9E0;
+  --main-bg-color: #f3f5f7;
+  --primary-color: #494d5a;
+  --secondary-color: #aed9e0;
   --secondary-bg-color: #faf3dd;
 }
 
@@ -23,11 +23,11 @@ button:hover {
   grid-column: span 8;
   text-align: center;
   align-content: start;
-  min-width:  100vw;
+  min-width: 100vw;
   min-height: 100vw;
   background-color: var(--main-bg-color);
 }
-.place-holder-text::placeholder{
+.place-holder-text::placeholder {
   color: #5e6472c4;
 }
 
@@ -69,7 +69,7 @@ button:hover {
   width: 330px;
 }
 .auth-input:focus {
-  outline:none;
+  outline: none;
 }
 .primary-authBtn {
   color: #eee;
@@ -79,10 +79,10 @@ button:hover {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgb(0, 0, 0, 10%), 0 8px 16px rgb(0, 0, 0, 10%);
-} 
+}
 
 .primary-authBtn:hover {
-  filter:brightness(85%);
+  filter: brightness(85%);
 }
 
 .primary-authBtn:active {
@@ -96,10 +96,10 @@ button:hover {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgb(0, 0, 0, 10%), 0 8px 16px rgb(0, 0, 0, 10%);
-} 
+}
 
 .secondary-authBtn:hover {
-  filter:brightness(85%);
+  filter: brightness(85%);
 }
 
 .secondary-authBtn:active {
@@ -130,7 +130,7 @@ button:hover {
   box-shadow: 0px 2px 4px rgb(0, 0, 0, 10%), 0 8px 16px rgb(0, 0, 0, 10%);
 }
 .lf-item {
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 5px;
 }
@@ -140,8 +140,6 @@ button:hover {
   align-self: flex-start;
   margin-left: 5px;
 }
-
-
 
 /* Signup Styling */
 .Signup {
@@ -165,7 +163,7 @@ button:hover {
   box-shadow: 0px 2px 4px rgb(0, 0, 0, 10%), 0 8px 16px rgb(0, 0, 0, 10%);
 }
 .sf-item {
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 5px;
 }
@@ -192,11 +190,15 @@ button:hover {
   font-size: small;
 }
 
-.profile h2, .profile p {
+.profile h2,
+.profile p {
   margin: 0px;
 }
 /* Feed Styling */
-.roast-table, .pagination, .logRoastBtn, .noRoasts {
+.roast-table,
+.pagination,
+.logRoastBtn,
+.noRoasts {
   grid-column: span 8;
 }
 
@@ -212,7 +214,7 @@ button:hover {
 
 .roast-table td {
   border: solid 1px gray;
-  background-color: var(--secondary-color)
+  background-color: var(--secondary-color);
 }
 
 .primaryBtn {
@@ -221,10 +223,10 @@ button:hover {
   padding: 3px 10px 3px;
   border: solid 1px black;
   border-radius: 5px;
-} 
+}
 
 .primaryBtn:hover {
-  filter:brightness(85%);
+  filter: brightness(85%);
 }
 
 .primaryBtn:active {
@@ -238,17 +240,16 @@ button:hover {
   padding: 3px 10px 3px;
   border: solid 1px black;
   border-radius: 5px;
-} 
+}
 
 .secondaryBtn:hover {
-  filter:brightness(85%);
+  filter: brightness(85%);
 }
 
 .secondaryBtn:active {
   border: none;
   box-shadow: none;
 }
-
 
 .roast-log {
   grid-column: span 8;
@@ -264,7 +265,6 @@ button:hover {
   grid-column: span 2;
 }
 
-
 .roastLogForm-container {
   background-color: var(--secondary-color);
 }
@@ -278,7 +278,7 @@ button:hover {
   top: 0;
   left: 0;
 }
- 
+
 .box {
   position: relative;
   width: 70%;
@@ -292,9 +292,9 @@ button:hover {
   border: 1px solid #999;
   overflow: auto;
 }
- 
+
 .close-icon {
-  content: 'x';
+  content: "x";
   cursor: pointer;
   position: fixed;
   right: calc(15% - 30px);
@@ -316,8 +316,7 @@ button:hover {
 .roastLogForm-container {
   grid-column: span 8;
   display: grid;
-  grid-template-areas: 
-  "LT F F F F F F F";
+  grid-template-areas: "LT F F F F F F F";
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -337,10 +336,9 @@ button:hover {
   padding-right: 20px;
   width: 100%;
   height: 100%;
-
 }
 .timerDisplay {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: xx-large;
@@ -380,7 +378,7 @@ button.logTable-item {
 .toggleTimerBtn {
   font-size: large;
   color: var(--primary-color);
-  background-color:var(--secondary-color);
+  background-color: var(--secondary-color);
   padding: 1px 10px 3px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -413,7 +411,7 @@ button.logTable-item {
   justify-content: flex-end;
   align-content: start;
   justify-self: center;
-  border-left: var(--primary-color) 1px solid;  
+  border-left: var(--primary-color) 1px solid;
   width: 100%;
   height: 100%;
 }
@@ -441,7 +439,7 @@ button.logTable-item {
 }
 .form-input:disabled {
   background-color: var(--main-bg-color);
-  filter: brightness(90%)
+  filter: brightness(90%);
 }
 .form-input:focus {
   outline: none;
@@ -455,15 +453,15 @@ button.logTable-item {
 }
 .form-select:disabled {
   background-color: var(--main-bg-color);
-  filter: brightness(90%)
+  filter: brightness(90%);
 }
 .form-select:focus {
   outline: none;
 }
 .fg-left {
-grid-column: 2 / 4;
-justify-self: left;
-width: 90%;
+  grid-column: 2 / 4;
+  justify-self: left;
+  width: 90%;
 }
 .fg-right {
   grid-column: 4 / 6;
@@ -486,20 +484,20 @@ width: 90%;
   grid-template-columns: 1fr;
 }
 .editable-form-group {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-    row-gap: 10px;
-    justify-content: center;
-    align-content: start;
-    justify-self: center;
-    margin-top: 5vh;
-    background-color: var(--secondary-color);
-    border-radius: 18px;
-    width: 80%;
-    min-height: 85vh;
-    height: fit-content;
-    box-shadow: 0px 2px 4px rgb(0, 0, 0, 10%), 0 8px 16px rgb(0, 0, 0, 10%);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  row-gap: 10px;
+  justify-content: center;
+  align-content: start;
+  justify-self: center;
+  margin-top: 5vh;
+  background-color: var(--secondary-color);
+  border-radius: 18px;
+  width: 80%;
+  min-height: 85vh;
+  height: fit-content;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 10%), 0 8px 16px rgb(0, 0, 0, 10%);
 }
 textarea {
   resize: none;

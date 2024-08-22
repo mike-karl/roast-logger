@@ -1,15 +1,13 @@
-import RoastDataTable from './RoastDataTable';
-import Profile from './Profile';
-
+import RoastDataTable from "./RoastDataTable";
+import Profile from "./Profile";
 
 const Home = () => {
-
-    return (
-        <>
-            <Profile />
-            <RoastDataTable />
-        </>
-    )
-}
+  return (
+    <>
+      <Profile />
+      <RoastDataTable />
+    </>
+  );
+};
 
 export default Home;

@@ -3,8 +3,6 @@ const port = process.env.PORT;
 
 const previewUrl = `https://${hostname}-${port}.csb.app`;
 
-console.log(previewUrl);
-
 const allowedOrigins = [
   "https://www.yoursite.com",
   previewUrl,
