@@ -20,11 +20,11 @@ const handleRefreshToken = async (req, res) => {
             process.env.REFRESH_TOKEN_SECRET,
             async (err, decoded) => {
                 if (err) return res.sendStatus(403); // Forbidden
-                console.log('attempted refresh token reuse!')
+                // console.log('attempted refresh token reuse!')
                 const hackedUser = await User.findOne({ email: decoded.email }).exec()
                 hackedUser.refreshToken = []
                 const result = await hackedUser.save()
-                console.log(result)
+                // console.log(result)
             }
         )
         return res.sendStatus(403) // Forbidden
@@ -45,7 +45,7 @@ const handleRefreshToken = async (req, res) => {
             }
             if (err || foundUser.email !== decoded.email) return res.sendStatus(403)
 
-            // Referesh toke was still valid
+            // Referesh token was still valid
             const accessToken = jwt.sign(
                 {
                     "UserInfo": {
@@ -66,7 +66,7 @@ const handleRefreshToken = async (req, res) => {
 
             // Creates Secure Cookie with refresh token
             res.cookie('jwt', newRefreshToken, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 })
-            res.json({ user: decoded.email, accessToken })
+            res.json({ user: foundUser.email, accessToken })
         }
     )
 }
