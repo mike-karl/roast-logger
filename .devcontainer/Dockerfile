@@ -13,3 +13,5 @@ RUN . /etc/os-release \
 # This copies our script into the mongodb docker container
 # This script gets run when the mongodb database is initialized
 COPY .devcontainer/docker-entrypoint-initdb.d/init-db.js /docker-entrypoint-initdb.d/
+
+RUN npm install -g serve

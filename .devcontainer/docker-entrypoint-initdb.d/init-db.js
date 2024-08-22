@@ -6,15 +6,15 @@ db = db.getSiblingDB('admin');
 db.createCollection('roasts');
 
 // Controls how many rows we initialize with dummy data
-const initRows = 25;
+const initRows = 2500;
 
 for (var i = 0; i < initRows; i++) {
     db.roasts.insertOne(
         {
-            "bean": "Dummy Bean",
+            "bean": "Ethiopia Misty Valley Grade 1 Yirgacheffe Natural",
             "roastDate": new Date(),
-            "description": "Dummy data log!",
-            "targetRoastLevel": "Dark Roast!",
+            "description": "Sample data log!",
+            "targetRoastLevel": "Full City",
             "phTemp": 500,
             "phTime": 20,
             "roastProfile": {
@@ -26,16 +26,16 @@ for (var i = 0; i < initRows; i++) {
                 "time":"01:00",
                 "temp": 480
                 }],
-                "roastLevel": "dark",
+                "roastLevel": "Full City",
                 "startWeight": 455,
                 "endWeight": 400,
                 "firstCrack": "8:00",
                 "rollingFirstCrack": "8:30",
                 "secondCrack": "12:00",
                 "totalRoastTime": "12:30",
-                "color": "med-brown",
+                "color": "Dark Brown",
                 "roastImageUrl": "example.jpg",
-                "roastNotes": "This is dummy data"
+                "roastNotes": "This is generated sample data"
             }
         }
     );

@@ -14,5 +14,3 @@ jspm_packages/
 
 # Environment Variables
 .env
-# Explicitly allowed. No sensitive data here. Just specifies port number for the react app.
-!/frontend/.env

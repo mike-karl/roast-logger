@@ -8,10 +8,12 @@
     "install": "npm run install:frontend && npm run install:backend",
     "install:frontend": "cd frontend && npm install",
     "install:backend": "cd backend && npm install",
-    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:dev": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:build": "concurrently \"npm run serve\" \"npm run start:backend\"",
     "start:frontend": "cd frontend && npm run start",
     "start:backend": "cd backend && npm run start",
     "start:mongodb": "cd .devcontainer && docker-compose up",
+    "serve": "cd frontend && serve -s build",
     "test": "cd frontend && npm run test"
   },
   "author": "Michael Karl",

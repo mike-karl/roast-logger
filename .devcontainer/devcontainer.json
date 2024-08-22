@@ -18,11 +18,25 @@
     }
   },
 
+  "containerEnv": {
+    "PORT": "3000", // The port number our react app will run on 
+    "SERVER_PORT": "5000", // The port number our express server will run on
+    "REACT_APP_SERVER_PORT": "5000", // The port number of the express server REACT_APP_ prefix is necessary for env variables in the react app
+    "DATABASE_URL": "mongodb://roastmaster:coffeeguru@localhost:27017/admin",
+    "ACCESS_TOKEN_SECRET": "accesstokensecret", // In production env would want to use a more secure secret
+    "REFRESH_TOKEN_SECRET": "refreshtokensecret" // In production env would want to use a more secure secret
+    // "REACT_APP_CODESANDBOX": "true" // Uncomment ONLY IF running in CODESANDBOX. Value must be "true" 
+  },
+
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000, 5000, "db:27017"]
+  "forwardPorts": [3000, 5000, "db:27017"],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "yarn install"
+  // Default is to start the build version of the frontend react-app
+  "postCreateCommand": "npm install && npm run install && npm run start:build"
+
+  // Use this instead to start the react app in dev mode
+  // "postCreateCommand": "npm isntall && npm run install && npm run start:dev"
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"

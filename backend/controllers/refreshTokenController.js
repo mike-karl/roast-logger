@@ -22,9 +22,12 @@ const handleRefreshToken = async (req, res) => {
                 if (err) return res.sendStatus(403); // Forbidden
                 // console.log('attempted refresh token reuse!')
                 const hackedUser = await User.findOne({ email: decoded.email }).exec()
-                hackedUser.refreshToken = []
-                const result = await hackedUser.save()
-                // console.log(result)
+                // Make sure hackedUser exists in db
+                if (hackedUser) {
+                    hackedUser.refreshToken = [];
+                    const result = await hackedUser.save();
+                    console.log(result)
+                }
             }
         )
         return res.sendStatus(403) // Forbidden
