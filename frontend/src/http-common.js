@@ -1,5 +1,6 @@
 import axios from "axios";
 
+/* This is to programatically get the url when running in codesandbox */
 const REGEX = /(?<id>\w{5,6})-(?<port>\d{1,5})\.(?<hostname>.*)/;
 
 function getPreviewUrl(port) {
@@ -18,6 +19,7 @@ function getPreviewUrl(port) {
 
   return `${id}-${port}.${hostname}`;
 }
+/* Codesandbox end */
 
 const port = process.env.REACT_APP_SERVER_PORT ?? "5000";
 export const BASE_URL =

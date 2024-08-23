@@ -37,9 +37,9 @@ function App() {
           <Route element={<RequireAuth />}>
             <Route path="/mantraCoffee/:id" element={<RoastLog />} />
           </Route>
-          {/* Catch All */}
-          <Route path="*" element={<Missing />} />
         </Route>
+        {/* Catch All */}
+        <Route path="*" element={<Missing />} />
       </Route>
     </Routes>
   );
