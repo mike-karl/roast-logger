@@ -14,4 +14,5 @@ RUN . /etc/os-release \
 # This script gets run when the mongodb database is initialized
 COPY .devcontainer/docker-entrypoint-initdb.d/init-db.js /docker-entrypoint-initdb.d/
 
+# Install this to run build version of react app
 RUN npm install -g serve
