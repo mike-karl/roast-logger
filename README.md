@@ -1,0 +1,13 @@
+# Roast Logger App
+This application was made with the intent to learn as well as build something that was personally useful. I roast coffee as hobby and what I would do is track roast temperature over time and record details about the roast so that I would have data to reference and use to replicate a roast or determine the way I preffered to roast a specific coffee. So, I thought a good project idea would be to automate that process and learn more about fullstack development. 
+## Features
+- [User Authentication](#user-authentication)
+- RestAPI
+- [React Frontend](#react-frontend)
+## User Authentication
+The web-app features user authentication via credentials (email, and password), using a JWT strategy that issues and access and refresh token. Both tokens are stored in the mongo database, along with an expiry and any other necessary data, so we have a persisted state of the tokens. The access token is stored in the frontend application state (persisted via localstorage if the user chooses) and is shortlived while the refresh token is a long lived token stored in a secure http-only cookie which protects against cross site scripting (XSS) attacks.
+
+On the frontend the access token is stored in the application state. To do this I used the react context api to create a context and wrap my protected frontend routes with the context.provider. The access token is required to use the restAPI endpoints, so the user sends the access token along with each request and the server validates the token. Each request also sends the secure http-only cookie with the request so that in the case where the access token is no longer valid if we have a valid refresh token in the cookie we can use the refresh token to get a new valid access token and then in the same request hit the requested endpoint.
+
+## React Frontend
+The React frontend application is meant to be a simple user interface to view roast log data and manage that data. I use react-router to handle the routing and navigation for the frontend app. This also makes it much sipmler to implement protected routes by wrapping the routes I want to be protected with my AuthProvider component. Once authenticated the user will be navigated to the home page where they can view a paginated table with all their roast data. From there the can click on the link to view the roast data in more detail and edit or delete it, or the can created a new roast log. When creating a roast log I created a timer that auto adds a new timestamp with the current value of the temperature you have set, as well as form fields to fill out the important details of the roast.
